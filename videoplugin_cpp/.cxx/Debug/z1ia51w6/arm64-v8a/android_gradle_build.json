@@ -1,0 +1,40 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "C:\\Users\\Admin\\Desktop\\work\\code\\project\\project\\EasyMovie-Android\\videoplugin_cpp\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\Admin\\Desktop\\work\\code\\project\\project\\EasyMovie-Android\\videoplugin_cpp\\.cxx\\Debug\\z1ia51w6\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\Admin\\Desktop\\work\\code\\project\\project\\EasyMovie-Android\\videoplugin_cpp\\.cxx\\Debug\\z1ia51w6\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "videoplugin-Debug-arm64-v8a": {
+      "buildCommandComponents": [
+        "C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+        "-C",
+        "C:\\Users\\Admin\\Desktop\\work\\code\\project\\project\\EasyMovie-Android\\videoplugin_cpp\\.cxx\\Debug\\z1ia51w6\\arm64-v8a",
+        "videoplugin"
+      ],
+      "buildType": "debug",
+      "abi": "arm64-v8a",
+      "artifactName": "videoplugin",
+      "output": "C:\\Users\\Admin\\Desktop\\work\\code\\project\\project\\EasyMovie-Android\\videoplugin_cpp\\build\\intermediates\\cxx\\Debug\\z1ia51w6\\obj\\arm64-v8a\\libvideoplugin.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
