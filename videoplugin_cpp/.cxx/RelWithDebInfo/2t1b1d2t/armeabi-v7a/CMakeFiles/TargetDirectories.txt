@@ -1,0 +1,3 @@
+C:/Users/Admin/Desktop/work/code/project/EasyMovie-Android/videoplugin_cpp/.cxx/RelWithDebInfo/2t1b1d2t/armeabi-v7a/CMakeFiles/videoplugin.dir
+C:/Users/Admin/Desktop/work/code/project/EasyMovie-Android/videoplugin_cpp/.cxx/RelWithDebInfo/2t1b1d2t/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/Admin/Desktop/work/code/project/EasyMovie-Android/videoplugin_cpp/.cxx/RelWithDebInfo/2t1b1d2t/armeabi-v7a/CMakeFiles/rebuild_cache.dir

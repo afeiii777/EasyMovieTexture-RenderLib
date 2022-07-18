@@ -17,14 +17,14 @@ unsigned int vertextShder, fragmentShder;
 int framWidth, framHeight;
 
 char* vertexShaderSource =
-"#version 300 es                  \n"
-"in vec4 myPosition;              \n"
-"in vec2 myTexCoord;              \n"
-"out vec2 fragmentTexCoord;       \n"
-"void main() {                    \n"
-"   gl_Position = myPosition;     \n"
-"   fragmentTexCoord = myTexCoord;\n"
-"}                                \n";
+"#version 300 es                                 \n"
+"layout (location = 0) in vec2 a_Position;       \n"
+"layout (location = 1) in vec2 a_TexCoord;       \n"
+"out vec2 fragmentTexCoord;                      \n"
+"void main() {                                   \n"
+"   gl_Position = vec4(aPos.x, aPos.y, 0.0, 1.0);\n"
+"   fragmentTexCoord = a_TexCoord;               \n"
+"}                                               \n";
 
 char* fragmentShaderSource =
 "#version 300 es                                         \n"
@@ -38,31 +38,32 @@ char* fragmentShaderSource =
 "}                                                       \n";
 
 float vertices[] = {
-        -1, -1,     0, 0,
-         1, -1,     1, 0,
-         1,  1,     1, 1,
-        -1,  1,     0, 1
+
+        -1, 1,0, 0,
+        1, 1,1, 0,
+        -1, -1,0, 1,
+        1, -1,1, 1,
 };
+
 
 void setUniform(const char* name,int i){
     int temp = glGetUniformLocation(shaderProgame, name);
     glUniform1i(temp,i);
 }
 
-
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_pvr_videoplugin_VideoPlugin_createOESTextureID(JNIEnv *env, jobject thiz) {
+Java_com_pvr_videoplugin_VideoPlugin_createOESTextureIDD(JNIEnv *env, jobject thiz) {
     LOGI("%s", __func__);
-    //TODO 创建oes纹理
     glGenTextures(1,&videoTexture);
+    LOGI("????%d",videoTexture);
     glBindTexture(GL_TEXTURE_EXTERNAL_OES,videoTexture);
-    glTexParameteri(GL_TEXTURE_EXTERNAL_OES,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_EXTERNAL_OES,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+    glTexParameterf(GL_TEXTURE_EXTERNAL_OES,GL_TEXTURE_MIN_FILTER,GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameterf(GL_TEXTURE_EXTERNAL_OES,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
     glTexParameteri(GL_TEXTURE_EXTERNAL_OES,GL_TEXTURE_WRAP_S,GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_EXTERNAL_OES,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_EDGE);
     glGenerateMipmap(GL_TEXTURE_EXTERNAL_OES);
-    return videoTexture;
+    return (jint)videoTexture;
 }
 
 extern "C"
@@ -86,16 +87,10 @@ Java_com_pvr_videoplugin_VideoPlugin_renderInit(JNIEnv *env, jobject thiz, jint 
     glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,4,(void*)(2 * sizeof(float)));
 
     glGenFramebuffers(1,&FBO);
-    //glBindFramebuffer(GL_FRAMEBUFFER,FBO);
+    glBindFramebuffer(GL_FRAMEBUFFER,FBO);
 
     framTexture = texture_id;
-
-    /*glGenTextures(1,&framTexture);
-    glBindTexture(GL_TEXTURE_2D,framTexture);
-    glTexImage2D(GL_TEXTURE_2D,0,GL_RGB,framWidth,framHeight,0,GL_RGB,GL_UNSIGNED_INT,NULL);
-    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
-    glFramebufferTexture2D(GL_FRAMEBUFFER,GL_COLOR_ATTACHMENT0,GL_TEXTURE_2D,framTexture,0);*/
+    glFramebufferTexture2D(GL_FRAMEBUFFER,GL_COLOR_ATTACHMENT0,GL_TEXTURE_2D,framTexture,0);
 
     shaderProgame = glCreateProgram();
 
@@ -111,39 +106,37 @@ Java_com_pvr_videoplugin_VideoPlugin_renderInit(JNIEnv *env, jobject thiz, jint 
     glDeleteShader(fragmentShder);
     glDeleteShader(vertextShder);
 
-    setUniform("s_Texture",0);
+    glViewport(0,0,framWidth,framHeight);
+    setUniform("videoTexture",0);
 }
 
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_pvr_videoplugin_VideoPlugin_renderDraw(JNIEnv *env, jobject thiz) {
-    LOGI("%s", __func__);
+    //LOGI("%s", __func__);
 
-    glViewport(0,0,framWidth,framHeight);
     glUseProgram(shaderProgame);
 
-    glClearColor(0.5,0.2,0.3,0.0);
+
+    glClearColor(1.0,0,0,0.0);
     glClear(GL_COLOR_BUFFER_BIT);
-
     glBindFramebuffer(GL_FRAMEBUFFER,FBO);
-    glFramebufferTexture2D(GL_FRAMEBUFFER,GL_COLOR_ATTACHMENT0,GL_TEXTURE_2D,framTexture,0);
 
+    glBindVertexArray(VAO);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_EXTERNAL_OES,videoTexture);
 
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
-    glBindTexture(GL_TEXTURE_2D,0);
-    glBindTexture(GL_TEXTURE_EXTERNAL_OES,0);
+    glBindVertexArray(0);
     glBindFramebuffer(GL_FRAMEBUFFER,0);
 }
 
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_pvr_videoplugin_VideoPlugin_renderRelease(JNIEnv *env, jobject thiz) {
-    LOGI("%s", __func__);
-    //TODO 释放资源，delete textures/buffers..
 
+    glBindTexture(GL_TEXTURE_2D,0);
     glDeleteTextures(1,&framTexture);
     glDeleteTextures(1,&videoTexture);
     glDeleteVertexArrays(1,&VAO);

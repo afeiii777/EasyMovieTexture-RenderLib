@@ -1,0 +1,10 @@
+ninja: Entering directory `C:\Users\Admin\Desktop\work\code\project\EasyMovie-Android\videoplugin_cpp\.cxx\Debug\5z5q5z6b\arm64-v8a'
+[1/2] Building CXX object CMakeFiles/videoplugin.dir/videoplugin.cpp.o
+C:/Users/Admin/Desktop/work/code/project/EasyMovie-Android/videoplugin_cpp/src/main/cpp/videoplugin.cpp:20:1: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+"#version 300 es                                 \n"
+^
+C:/Users/Admin/Desktop/work/code/project/EasyMovie-Android/videoplugin_cpp/src/main/cpp/videoplugin.cpp:30:1: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+"#version 300 es                                         \n"
+^
+2 warnings generated.
+[2/2] Linking CXX shared library C:\Users\Admin\Desktop\work\code\project\EasyMovie-Android\videoplugin_cpp\build\intermediates\cxx\Debug\5z5q5z6b\obj\arm64-v8a\libvideoplugin.so

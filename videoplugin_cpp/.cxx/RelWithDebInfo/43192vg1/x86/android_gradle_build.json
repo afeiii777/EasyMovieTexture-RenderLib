@@ -1,0 +1,40 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "C:\\Users\\Admin\\Desktop\\work\\code\\project\\EasyMovie-Android\\videoplugin_cpp\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\Admin\\Desktop\\work\\code\\project\\EasyMovie-Android\\videoplugin_cpp\\.cxx\\RelWithDebInfo\\43192vg1\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\Admin\\Desktop\\work\\code\\project\\EasyMovie-Android\\videoplugin_cpp\\.cxx\\RelWithDebInfo\\43192vg1\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "videoplugin-RelWithDebInfo-x86": {
+      "buildCommandComponents": [
+        "C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+        "-C",
+        "C:\\Users\\Admin\\Desktop\\work\\code\\project\\EasyMovie-Android\\videoplugin_cpp\\.cxx\\RelWithDebInfo\\43192vg1\\x86",
+        "videoplugin"
+      ],
+      "buildType": "release",
+      "abi": "x86",
+      "artifactName": "videoplugin",
+      "output": "C:\\Users\\Admin\\Desktop\\work\\code\\project\\EasyMovie-Android\\videoplugin_cpp\\build\\intermediates\\cxx\\RelWithDebInfo\\43192vg1\\obj\\x86\\libvideoplugin.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

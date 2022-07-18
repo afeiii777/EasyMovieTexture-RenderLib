@@ -1,0 +1,7 @@
+Executable : C:\Users\Admin\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+C:\Users\Admin\Desktop\work\code\project\EasyMovie-Android\videoplugin_cpp\.cxx\Debug\6oi6a6h5\armeabi-v7a
+videoplugin
+jvmArgs : 
+

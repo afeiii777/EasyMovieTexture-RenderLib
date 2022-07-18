@@ -1,0 +1,14 @@
+# ninja log v5
+0	832	679490931	CMakeFiles/videoplugin.dir/videoplugin.cpp.o	ca2edc0aa2c50b8a
+833	1126	679490932	C:/Users/Admin/Desktop/work/code/project/EasyMovie-Android/videoplugin_cpp/build/intermediates/cxx/RelWithDebInfo/2t1b1d2t/obj/x86/libvideoplugin.so	4aa7ec822b64c12
+0	9	0	clean	2578cf2e1c50266c
+2	750	679492691	CMakeFiles/videoplugin.dir/videoplugin.cpp.o	ca2edc0aa2c50b8a
+751	1012	679492692	C:/Users/Admin/Desktop/work/code/project/EasyMovie-Android/videoplugin_cpp/build/intermediates/cxx/RelWithDebInfo/2t1b1d2t/obj/x86/libvideoplugin.so	4aa7ec822b64c12
+0	11	0	clean	2578cf2e1c50266c
+2	760	679493117	CMakeFiles/videoplugin.dir/videoplugin.cpp.o	ca2edc0aa2c50b8a
+760	1026	679493117	C:/Users/Admin/Desktop/work/code/project/EasyMovie-Android/videoplugin_cpp/build/intermediates/cxx/RelWithDebInfo/2t1b1d2t/obj/x86/libvideoplugin.so	4aa7ec822b64c12
+0	10	0	clean	2578cf2e1c50266c
+0	14	0	clean	2578cf2e1c50266c
+0	9	0	clean	2578cf2e1c50266c
+2	946	679493579	CMakeFiles/videoplugin.dir/videoplugin.cpp.o	ca2edc0aa2c50b8a
+946	1252	679493579	C:/Users/Admin/Desktop/work/code/project/EasyMovie-Android/videoplugin_cpp/build/intermediates/cxx/RelWithDebInfo/2t1b1d2t/obj/x86/libvideoplugin.so	4aa7ec822b64c12

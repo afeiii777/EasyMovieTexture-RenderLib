@@ -6,11 +6,10 @@ import android.graphics.SurfaceTexture;
 import android.graphics.SurfaceTexture.OnFrameAvailableListener;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.util.Log;
 import android.view.Surface;
 
-import java.io.File;
+
 import java.io.IOException;
 
 public class VideoPlugin implements OnFrameAvailableListener {
@@ -25,7 +24,7 @@ public class VideoPlugin implements OnFrameAvailableListener {
     private MediaPlayer mMediaPlayer;
     private boolean mIsUpdateFrame;
 
-    private native int createOESTextureID();
+    private native int createOESTextureIDD();
 
     private native void renderInit(int width, int height, int textureId);
 
@@ -33,12 +32,13 @@ public class VideoPlugin implements OnFrameAvailableListener {
 
     private native void renderRelease();
 
+
     public VideoPlugin(Activity activity) {
         mActivity = activity;
     }
 
     public void start(int textureId, int width, int height) {
-        int oesTextureId = createOESTextureID();
+        int oesTextureId = createOESTextureIDD();
         log("start, width=" + width + ", height=" + height + ", textureId=" + textureId + ", oesTextureId=" + oesTextureId);
         mSurfaceTexture = new SurfaceTexture(oesTextureId);
         mSurfaceTexture.setDefaultBufferSize(width, height);
@@ -93,12 +93,12 @@ public class VideoPlugin implements OnFrameAvailableListener {
 
     @Override
     public void onFrameAvailable(SurfaceTexture surfaceTexture) {
-        log("onFrameAvailable");
+        //log("onFrameAvailable");
         mIsUpdateFrame = true;
     }
 
     public void updateTexture() {
-        log("updateTexture");
+        //log("updateTexture");
         mIsUpdateFrame = false;
         mSurfaceTexture.updateTexImage();
         renderDraw();

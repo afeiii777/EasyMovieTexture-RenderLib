@@ -1,0 +1,3 @@
+C:/Users/Admin/Desktop/work/code/project/EasyMovie-Android/videoplugin_cpp/.cxx/RelWithDebInfo/43192vg1/x86_64/CMakeFiles/videoplugin.dir
+C:/Users/Admin/Desktop/work/code/project/EasyMovie-Android/videoplugin_cpp/.cxx/RelWithDebInfo/43192vg1/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/Admin/Desktop/work/code/project/EasyMovie-Android/videoplugin_cpp/.cxx/RelWithDebInfo/43192vg1/x86_64/CMakeFiles/rebuild_cache.dir
